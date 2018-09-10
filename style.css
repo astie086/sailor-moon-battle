@@ -38,9 +38,9 @@ body {
 }
 
 #blasts {
-  background-image: url("img/blast1.png");
   height: 800px;
-  background-repeat: no-repeat;
+  width: auto;
+  position: absolute;
 }
 
 #blast {

@@ -24,6 +24,9 @@
             left: 600
         };
 
+        var missiles = [];
+
+
         //moving neochibimoon
         document.onkeydown = function (e) {
 
@@ -43,6 +46,10 @@
 
             else if (e.keyCode === 32) {
                 console.log("blast");
+                missle.push({
+                    left: neochibimoon.left + 15,
+                    top: neochibimoon.top
+                })
             }
         }
 
