@@ -12,8 +12,10 @@
 <body>
     <div id="background">
         <div id="neochibimoon"></div>
-        <div class="beryl"></div>
+        <!-- <div class="beryl"></div> -->
         <div id="blasts"></div>
+        <div id="beryls"></div>
+
 
     </div>
 
@@ -25,6 +27,14 @@
         };
 
         var blasts = [];
+
+        var beryls = [
+            { left: 900, top: 100 },
+            { left: 700, top: 100 },
+            { left: 500, top: 100 },
+            { left: 300, top: 100 },
+            { left: 100, top: 100 },
+        ];
 
 
         //moving neochibimoon
@@ -75,10 +85,49 @@
             }
         }
 
+        function drawberyls() {
+            document.getElementById('beryls').innerHTML = "";
+            for (var beryl = 0; beryl < beryls.length; beryl = beryl + 1) {
+
+                //adding the blast
+                document.getElementById('beryls').innerHTML +=
+                    `<div class='beryl' style='left:${beryls[beryl].left}px; top:${beryls[beryl].top}px;'></div>`;
+
+            }
+        }
+
+        function moveBeryls() {
+            for (var beryl = 0; beryl < beryls.length; beryl = beryl + 1) {
+                beryls[beryl].top = beryls[beryl].top + 5;
+            }
+        }
+
+        // detecting blast hits beryl
+
+        function berylHit() {
+            for (var beryl = 0; beryl < beryls.length; beryl = beryl + 1) {
+                for (var blast = 0; blast < blasts.length; blast = blast + 1) {
+                    if (
+                        (blasts[blast].top <= beryls[beryl].top + 50) &&
+                        (blasts[blast].top >= beryls[beryl].top) &&
+                        (blasts[blast].left >= beryls[beryl].left) &&
+                        (blasts[blast].left <= beryls[beryl].left + 50)
+                    ) {
+                        enemies.splice(enemy, 1);
+                        enemies.splice(enemy, 1);
+                    }
+                }
+            }
+        }
+
+
         function gameLoop() {
-            setTimeout(gameLoop, 100)
+            setTimeout(gameLoop, 1000)
             fireBlast();
             moveBlast();
+            drawberyls();
+            moveBeryls();
+            berylHit();
         }
 
         gameLoop();
