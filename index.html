@@ -59,15 +59,21 @@
         }
 
         function fireBlast() {
-            alert('hello');
             document.getElementById('blasts').innerHTML = "";
             for (var blast = 0; blast < blasts.length; blast = blast + 1) {
+
                 //adding the blast
                 document.getElementById('blasts').innerHTML +=
                     `<div class='blast' style='left:${blasts[blast].left}px; top:${blasts[blast].top}px;'></div>`;
 
             }
         }
+
+        function gameLoop() {
+            setTimeout(gameloop, 1000)
+        }
+
+        gameLoop();
 
     </script>
 

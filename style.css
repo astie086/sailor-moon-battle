@@ -43,10 +43,11 @@ body {
   position: absolute;
 }
 
-#blast {
+.blast {
   background-image: url("img/blast1.png");
   height: 50px;
   width: 50px;
   background-position: center;
   background-repeat: no-repeat;
+  position: absolute;
 }
