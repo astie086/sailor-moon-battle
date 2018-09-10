@@ -16,7 +16,9 @@ body {
 }
 
 #neochibimoon {
-  background-image: url("img/minimoon.jpg");
+  background-image: url("img/minimoon.png");
   height: 175px;
   width: 175px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
