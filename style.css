@@ -21,4 +21,18 @@ body {
   width: 175px;
   background-position: center;
   background-repeat: no-repeat;
+  position: absolute;
+  top: 400px;
+  left: 600px;
+}
+
+#bery {
+  background-image: url("img/beryl1.png");
+  height: 170px;
+  width: 170px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 70px;
+  left: 600px;
 }
