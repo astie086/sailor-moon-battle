@@ -24,7 +24,7 @@
             left: 600
         };
 
-        var missiles = [];
+        var blasts = [];
 
 
         //moving neochibimoon
@@ -46,15 +46,27 @@
 
             else if (e.keyCode === 32) {
                 console.log("blast");
-                missle.push({
+                blasts.push({
                     left: neochibimoon.left + 15,
                     top: neochibimoon.top
                 })
+                fireBlast()
             }
         }
 
         function moveChibi() {
             document.getElementById('neochibimoon').style.left = neochibimoon.left + "px";
+        }
+
+        function fireBlast() {
+            alert('hello');
+            document.getElementById('blasts').innerHTML = "";
+            for (var blast = 0; blast < blasts.length; blast = blast + 1) {
+                //adding the blast
+                document.getElementById('blasts').innerHTML +=
+                    `<div class='blast' style='left:${blasts[blast].left}px; top:${blasts[blast].top}px;'></div>`;
+
+            }
         }
 
     </script>
