@@ -26,7 +26,7 @@ body {
   left: 600px;
 }
 
-#bery {
+.beryl {
   background-image: url("img/beryl1.png");
   height: 170px;
   width: 170px;
@@ -35,4 +35,18 @@ body {
   position: absolute;
   top: 70px;
   left: 600px;
+}
+
+#blasts {
+  background-image: url("img/blast1.png");
+  height: 800px;
+  background-repeat: no-repeat;
+}
+
+#blast {
+  background-image: url("img/blast1.png");
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
 }

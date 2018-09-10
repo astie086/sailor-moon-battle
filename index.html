@@ -12,10 +12,47 @@
 <body>
     <div id="background">
         <div id="neochibimoon"></div>
-        <div id="bery"></div>
+        <div class="beryl"></div>
+        <div id="blasts"></div>
 
     </div>
 
+    <script>
+
+        var neochibimoon = {
+            top: 400,
+            left: 600
+        };
+
+        //moving neochibimoon
+        document.onkeydown = function (e) {
+
+            console.log(e.keyCode);
+
+            if (e.keyCode === 37) {
+                console.log('Left');
+                neochibimoon.left = neochibimoon.left - 10;
+                moveChibi();
+            }
+
+            else if (e.keyCode === 39) {
+                console.log('Right');
+                neochibimoon.left = neochibimoon.left + 10;
+                moveChibi();
+            }
+
+            else if (e.keyCode === 32) {
+                console.log("blast");
+            }
+        }
+
+        function moveChibi() {
+            document.getElementById('neochibimoon').style.left = neochibimoon.left + "px";
+        }
+
+    </script>
+
 </body>
+
 
 </html>
